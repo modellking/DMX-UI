@@ -1,11 +1,14 @@
 ---
 name: Feature request
 about: Suggest an idea for this project
-title: ''
+title: 'Feature: '
 labels: ''
 assignees: ''
 
 ---
+
+**Obvious Dependecies**
+Link other issues that are prerequisites to the implementation of this feature
 
 **Is your feature request related to a problem? Please describe.**
 A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
