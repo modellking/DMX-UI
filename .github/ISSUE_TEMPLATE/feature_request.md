@@ -7,7 +7,7 @@ assignees: ''
 
 ---
 
-**Obvious Dependecies**
+**Obvious Dependencies**
 Link other issues that are prerequisites to the implementation of this feature
 
 **Describe the solution you'd like**
