@@ -1,0 +1,113 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/FixtureType",
+    "definitions": {
+		"DMX_Channel": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 511
+		},
+		"DMX_Value": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 255
+		},
+		"DMX_Value_double": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 65535
+		},
+        "FixtureType": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "tilt": {"$ref": "#/definitions/DMX_Channel"},
+                "tiltFine": {"$ref": "#/definitions/DMX_Channel"},
+                "tiltZeroValue": {"$ref": "#/definitions/DMX_Value_double"},
+                "tiltSpeedMax": {
+                    "type": "number",
+					"minimum": 0
+                },
+                "tiltSpeed": {"$ref": "#/definitions/DMX_Channel"},
+                "tiltSpeedInverted": {"type": "boolean"},
+                "pan": {"$ref": "#/definitions/DMX_Channel"},
+                "panFine": {"$ref": "#/definitions/DMX_Channel"},
+                "panZeroValue": {"$ref": "#/definitions/DMX_Value_double"},
+                "panSpeedMax": {
+                    "type": "integer",
+					"minimum": 0
+                },
+                "panSpeed": {"$ref": "#/definitions/DMX_Channel"},
+                "panSpeedInverted": {"type": "boolean"},
+                "tiltRangeLower": {"type": "number"},
+                "tiltRangeHigher": {"type": "number"},
+                "panRangeLower": {"type": "number"},
+                "panRangeHigher": {"type": "number"},
+                "colorWheel": {"$ref": "#/definitions/DMX_Channel"},
+                "goboWheel": {"$ref": "#/definitions/DMX_Channel"},
+                "beamAngle": {"$ref": "#/definitions/DMX_Channel"},
+                "beamAngleFine": {"$ref": "#/definitions/DMX_Channel"},
+                "beamAngleMin": {
+                    "type": "number",
+					"minimum": 0,
+					"maximum": 360
+                },
+                "beamAngleMax": {
+                    "type": "number",
+					"minimum": 0,
+					"maximum": 360
+                },
+                "strobe": {"$ref": "#/definitions/DMX_Channel"},
+                "strobeOpen": {"$ref": "#/definitions/DMX_Value"},
+                "strobeClosed": {"$ref": "#/definitions/DMX_Value"},
+                "strobeMin": {"$ref": "#/definitions/DMX_Value"},
+                "strobeMax": {"$ref": "#/definitions/DMX_Value"},
+                "strobeFlashPerSecMin": {
+                    "type": "number",
+					"minimum": 0
+                },
+                "strobeFlashPerSecMax": {
+                    "type": "number",
+					"minimum": 0
+                },
+                "name": {
+                    "type": "string"
+                },
+                "colorWheelDefaultSetupKeys": {
+                    "type": "array",
+                    "items": {
+                        "type": {"$ref": "#/definitions/DMX_Value"},
+                    }
+                },
+                "colorWheelDefaultSetupValues": {
+                    "type": "array",
+                    "items": {
+                        "type": "number",
+						"$comment": "Length is 4x Keys Length as each set of 4 Values is a RGBA float set"
+                    }
+                },
+                "lightsSerialized": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer",
+						"$comment": "TODO"
+                    }
+                },
+                "goboWheelDefaultSetupKeys": {
+                    "type": "array",
+                    "items": {
+                        "type": {"$ref": "#/definitions/DMX_Value"},
+                    }
+                },
+                "goboWheelDefaultSetupValues": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": ["name"],
+            "title": "FixtureType"
+        }
+    }
+}
